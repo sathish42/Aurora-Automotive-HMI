@@ -11,7 +11,7 @@ ApplicationWindow {
     minimumWidth: 1024
     minimumHeight: 640
     visible: true
-    title: "AutoHMI"
+    title: "Aurora Automotive HMI"
     color: Theme.background
 
     function screenLabel(screen) {

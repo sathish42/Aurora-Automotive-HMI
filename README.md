@@ -1,6 +1,6 @@
-# Automotive HMI System
+# Aurora Automotive HMI
 
-I started this project to improve my Qt/QML and C++ skills while exploring how an automotive-style HMI can be structured.
+I started Aurora Automotive HMI to improve my Qt/QML and C++ skills while exploring how an automotive-style HMI can be structured.
 
 The app is a desktop simulation: C++ services generate vehicle-like telemetry, and QML presents it across a set of screens. A second, explicitly simulated CAN-frame source can feed the same vehicle-data model. Building it has given me practice connecting QML to C++ with properties and signals, organizing reusable UI components, and testing service and UI behavior.
 

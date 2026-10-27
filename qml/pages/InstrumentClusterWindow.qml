@@ -10,7 +10,7 @@ Window {
     minimumWidth: 720
     minimumHeight: 440
     visible: Settings.clusterWindowEnabled && Qt.platform.os !== "android"
-    title: "AutoHMI — Secondary instrument display"
+    title: "Aurora Automotive HMI — Secondary instrument display"
     color: Theme.background
 
     Component.onCompleted: DisplayManager.attachClusterWindow(clusterWindow)

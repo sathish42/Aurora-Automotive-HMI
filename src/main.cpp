@@ -18,12 +18,12 @@ int main(int argc, char *argv[])
 {
     QQuickStyle::setStyle(QStringLiteral("Basic"));
     QGuiApplication app(argc, argv);
-    QGuiApplication::setApplicationName(QStringLiteral("AutoHMI"));
+    QGuiApplication::setApplicationName(QStringLiteral("Aurora Automotive HMI"));
     QGuiApplication::setOrganizationName(QStringLiteral("Example Automotive"));
     QGuiApplication::setApplicationVersion(QStringLiteral("1.0.0"));
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(QStringLiteral("Automotive HMI desktop demonstration"));
+    parser.setApplicationDescription(QStringLiteral("Aurora Automotive HMI desktop demonstration"));
     parser.addHelpOption();
     parser.addVersionOption();
     const QCommandLineOption virtualDisplaysOption(
