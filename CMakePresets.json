@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "msys2-ucrt64",
+      "displayName": "MSYS2 UCRT64 (Qt 6)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/mingw-ucrt64",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "C:/msys64/ucrt64/bin/g++.exe",
+        "CMAKE_MAKE_PROGRAM": "C:/msys64/ucrt64/bin/ninja.exe",
+        "CMAKE_PREFIX_PATH": "C:/msys64/ucrt64",
+        "BUILD_TESTING": "ON"
+      },
+      "environment": {
+        "PATH": "C:/msys64/ucrt64/bin;$penv{PATH}"
+      }
+    }
+  ]
+}
