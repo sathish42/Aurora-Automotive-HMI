@@ -31,7 +31,9 @@ jobs:
             mingw-w64-ucrt-x86_64-qt6-shadertools
 
       - name: Configure
-        run: cmake --preset msys2-ucrt64
+        run: |
+          cmake --preset msys2-ucrt64 \
+            -DCMAKE_PREFIX_PATH="$(cygpath -m "$MSYSTEM_PREFIX")"
 
       - name: Build
         run: cmake --build build/mingw-ucrt64 --parallel 4

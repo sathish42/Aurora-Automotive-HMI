@@ -85,10 +85,16 @@ cmake --build build
 ctest --test-dir build --output-on-failure
 ```
 
-For MSYS2 UCRT64, this repository includes a configure preset:
+For MSYS2 UCRT64, configure from an MSYS2 UCRT64 shell so the preset can discover the active compiler and Ninja:
+
+```sh
+cmake --preset msys2-ucrt64 \
+  -DCMAKE_PREFIX_PATH="$(cygpath -m "$MSYSTEM_PREFIX")"
+```
+
+Then build and run the application and tests:
 
 ```powershell
-cmake --preset msys2-ucrt64
 cmake --build build/mingw-ucrt64 --parallel 4
 .\build\mingw-ucrt64\auto-hmi.exe
 .\build\mingw-ucrt64\auto-hmi.exe --virtual-displays
@@ -96,7 +102,7 @@ cmake --build build/mingw-ucrt64 --parallel 4
 .\build\mingw-ucrt64\auto-hmi-qml-tests.exe -v1
 ```
 
-The MSYS2 preset currently uses `C:\msys64` for the compiler, Ninja, and Qt paths. Update those paths in `CMakePresets.json` if MSYS2 is installed elsewhere. The project was built with Qt 6.12 and MinGW UCRT64. Run both registered tests with `ctest --test-dir build/mingw-ucrt64 --output-on-failure`.
+The preset resolves the compiler and Ninja from the active MSYS2 environment, and the prefix command above locates Qt even when MSYS2 is installed outside its default location. The project was built with Qt 6.12 and MinGW UCRT64. Run both registered tests with `ctest --test-dir build/mingw-ucrt64 --output-on-failure`.
 
 The Android workflow uses Qt 6.8.3, the Android ARM64 Qt kit, Android SDK 35, and NDK 26.1.10909125 to package a debug APK using Qt's generated `auto-hmi_make_apk` target. It has not been validated by a hosted workflow run or on an Android device. An Android APK build is not evidence of Android Automotive OS compatibility or approval for in-vehicle use.
 
