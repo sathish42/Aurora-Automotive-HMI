@@ -43,7 +43,7 @@ jobs:
         uses: jurplel/install-qt-action@v4
         with:
           version: "6.8.3"
-          host: linux
+          host: all_os
           target: android
           arch: android_arm64_v8a
           cache: true
